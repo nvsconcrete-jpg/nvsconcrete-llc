@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NVS Concrete LLC</title>
+  <style>
+    :root{
+      --blue:#0f4c97;
+      --blue-dark:#0c376d;
+      --text:#1f2937;
+      --muted:#5b6472;
+      --light:#f4f6fa;
+      --line:#d7dee8;
+      --white:#ffffff;
+      --shadow:0 18px 40px rgba(15,23,42,.12);
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:#e8ecf2;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .page{
+      max-width:1280px;
+      margin:26px auto;
+      background:var(--white);
+      border:2px solid #5578a6;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 24px;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:24px;
+    }
+    .logo-wrap img{
+      width:220px;
+      height:auto;
+      object-fit:contain;
+    }
+    .nav-links{
+      display:flex;
+      justify-content:center;
+      gap:28px;
+      font-size:15px;
+      font-weight:700;
+      color:#4b5563;
+      flex-wrap:wrap;
+    }
+    .nav-contact{
+      display:flex;
+      gap:18px;
+      font-size:15px;
+      font-weight:700;
+      color:#334155;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .hero{
+      position:relative;
+      min-height:560px;
+      background:
+        linear-gradient(90deg, rgba(9,48,99,.78) 0%, rgba(15,76,151,.70) 45%, rgba(15,76,151,.08) 78%),
+        url('images/hero-team.jpg') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+    }
+    .hero-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      width:100%;
+      padding:56px 24px;
+    }
+    .hero-copy{max-width:610px;color:#fff}
+    .hero h1{
+      margin:0 0 10px;
+      font-size:62px;
+      line-height:1.02;
+      letter-spacing:-1.5px;
+    }
+    .hero .subhead{
+      font-size:23px;
+      margin:0 0 18px;
+      color:#e6eef8;
+      font-weight:500;
+    }
+    .hero .body{
+      font-size:18px;
+      line-height:1.6;
+      margin:0 0 28px;
+      color:#edf4ff;
+      max-width:520px;
+    }
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px 24px;
+      min-width:190px;
+      border-radius:8px;
+      font-size:17px;
+      font-weight:800;
+      border:2px solid transparent;
+    }
+    .btn-primary{background:#125fc0;color:#fff}
+    .btn-secondary{background:#fff;color:#1f2937;border-color:#d7dee8}
+    .cred-bar{
+      border-top:1px solid #d9e1ea;
+      border-bottom:1px solid #d9e1ea;
+      background:#fff;
+    }
+    .cred-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:0;
+    }
+    .cred{
+      padding:18px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-align:center;
+      font-weight:800;
+      font-size:17px;
+      color:#24364f;
+      border-right:1px solid var(--line);
+    }
+    .cred:last-child{border-right:none}
+    .check{
+      width:22px;height:22px;border-radius:50%;background:var(--blue);position:relative;flex:0 0 auto;
+    }
+    .check:after{
+      content:'';position:absolute;left:6px;top:5px;width:8px;height:4px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(-45deg);
+    }
+    .main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:42px 24px 18px;
+    }
+    .about-grid{
+      display:grid;
+      grid-template-columns:0.92fr 1.08fr;
+      gap:34px;
+      align-items:start;
+    }
+    .section-title{
+      margin:0 0 18px;
+      font-size:32px;
+      color:#123b7a;
+      letter-spacing:-.4px;
+    }
+    .copy p{
+      font-size:17px;
+      line-height:1.65;
+      margin:0 0 16px;
+      color:#4b5563;
+    }
+    .mini-box{
+      margin-top:22px;
+      background:#f5f7fb;
+      border:1px solid var(--line);
+      padding:18px 20px;
+      font-size:16px;
+      color:#334155;
+      line-height:1.7;
+    }
+    .about-image,
+    .project-card{
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:0 10px 24px rgba(15,23,42,.08);
+    }
+    .about-image img{width:100%;aspect-ratio:1.08/1;object-fit:cover}
+    .projects-title{
+      margin:34px 0 18px;
+      font-size:31px;
+      color:#123b7a;
+      letter-spacing:-.3px;
+    }
+    .projects-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:24px;
+    }
+    .project-card img{width:100%;aspect-ratio:1.15/.85;object-fit:cover}
+    .project-body{padding:18px 20px 22px}
+    .project-body h3{
+      margin:0 0 10px;
+      font-size:21px;
+      line-height:1.25;
+      color:#1f2937;
+    }
+    .project-body p{
+      margin:0;
+      color:#4b5563;
+      font-size:16px;
+      line-height:1.6;
+    }
+    .footer{
+      margin-top:22px;
+      background:var(--blue-dark);
+      color:#fff;
+    }
+    .footer-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:16px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      font-size:15px;
+    }
+    .footer-nav{display:flex;gap:18px;flex-wrap:wrap}
+    .note{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 24px 28px;
+      font-size:13px;
+      color:#6b7280;
+    }
+    @media (max-width:1100px){
+      .nav{grid-template-columns:1fr;justify-items:center;text-align:center}
+      .nav-contact{justify-content:center}
+      .cred-inner,.projects-grid,.about-grid{grid-template-columns:1fr 1fr}
+      .projects-grid .project-card:last-child{grid-column:1/-1}
+      .hero h1{font-size:50px}
+    }
+    @media (max-width:760px){
+      .page{margin:0;border:none}
+      .hero{min-height:auto}
+      .hero-inner{padding:42px 18px}
+      .hero h1{font-size:40px}
+      .hero .subhead{font-size:18px}
+      .hero .body{font-size:16px}
+      .cred-inner,.projects-grid,.about-grid{grid-template-columns:1fr}
+      .cred{border-right:none;border-bottom:1px solid var(--line)}
+      .cred:last-child{border-bottom:none}
+      .main{padding:30px 18px 14px}
+      .nav{padding:18px}
+      .footer-inner{padding:16px 18px}
+      .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="logo-wrap">
+        <img src="images/nvs-logo.png" alt="NVS Concrete LLC logo">
+      </div>
+
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#qualifications">Qualifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-contact">
+        <span>(559) 481-0758</span>
+        <span>nvs.concrete@gmail.com</span>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1>Highway, Structural &amp; Site Concrete Specialists</h1>
+          <p class="subhead">Public Works • Municipal • Commercial</p>
+          <p class="body">NVS Concrete LLC performs highway paving, structural and site concrete throughout the Central Valley, delivering quality installations built to plans, specifications, and public works standards.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Request a Quote</a>
+            <a class="btn btn-secondary" href="#projects">View Our Work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cred-bar" id="qualifications">
+      <div class="cred-inner">
+        <div class="cred"><span class="check"></span>CSLB #1107805</div>
+        <div class="cred"><span class="check"></span>SB #2034570</div>
+        <div class="cred"><span class="check"></span>DIR #1001094703</div>
+        <div class="cred"><span class="check"></span>Public Works Experience</div>
+      </div>
+    </section>
+
+    <main class="main">
+      <section class="about-grid">
+        <div class="copy">
+          <h2 class="section-title">About NVS</h2>
+          <p>NVS Concrete LLC specializes in highway paving, structural foundations, flatwork, site improvements, and public infrastructure concrete construction. Our crews support municipal facilities, churches, public projects, and commercial concrete scopes with quality workmanship and dependable coordination.</p>
+          <p>We work closely with contractors, inspectors, suppliers, and trades to maintain production schedules while meeting project requirements, safety expectations, and finish standards.</p>
+          <p id="services">Core scopes include highway concrete paving, Jointed Plain Concrete Pavement (JPCP), sidewalks, curb and gutter, drilled piers, foundations, structural pads, flatwork, and site concrete improvements.</p>
+          <div class="mini-box">
+            <strong>California Contractor License:</strong> #1107805<br>
+            <strong>California Certified Small Business:</strong> SB #2034570<br>
+            <strong>DIR Public Works Registration:</strong> #1001094703
+          </div>
+        </div>
+
+        <div class="about-image">
+          <img src="images/about-nvs.jpg" alt="NVS concrete jobsite photo">
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="projects-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <img src="images/jackass-rock-cabin.jpg" alt="Jackass Rock Cabin Replacement project">
+            <div class="project-body">
+              <h3>Jackass Rock Cabin Replacement — Madera County, CA</h3>
+              <p>Drilled pier foundations and elevated cabin support system for the Jackass Rock Cabin Replacement project.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="images/loma-vista-church.jpg" alt="Loma Vista Church concrete work">
+            <div class="project-body">
+              <h3>Loma Vista Church — Concrete Improvements</h3>
+              <p>Concrete flatwork and site improvements completed for church facility upgrades.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <img src="images/david-t-cardenas-center.jpg" alt="David T. Cardenas Center concrete work">
+            <div class="project-body">
+              <h3>David T. Cardenas Police &amp; Senior Center — Fowler, CA</h3>
+              <p>Structural and site concrete scope including foundation systems, flatwork, and exterior improvements for a public facility project.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="footer-inner">
+        <div><strong>NVS Concrete LLC</strong> • Central Valley, CA • (559) 481-0758 • nvs.concrete@gmail.com</div>
+        <div class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#qualifications">Qualifications</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="note">
+      Use these exact image file names in your website folder: <strong>nvs-logo.png</strong>, <strong>hero-team.jpg</strong>, <strong>about-nvs.jpg</strong>, <strong>jackass-rock-cabin.jpg</strong>, <strong>loma-vista-church.jpg</strong>, and <strong>david-t-cardenas-center.jpg</strong> inside an <strong>images</strong> folder.
+    </div>
+  </div>
+</body>
+</html>
